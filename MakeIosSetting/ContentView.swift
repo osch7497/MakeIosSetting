@@ -51,34 +51,48 @@ struct ContentView: View {
                                 .padding(1)
                             Text("에어플레인 모드")
                             Toggle("",isOn:$airplaneMode)
-                                
                         }
-                        HStack{
-                            Image(systemName: "wifi")
-                                .foregroundColor(.white)
-                                .frame(width: 30, height: 30)
-                                .background(Color.blue)
-                                .cornerRadius(10)
-                                .padding(1)
-                            Text("Wi-Fi")
-                            Spacer()
-                            Text("us_gbsw_hs_P")
-                                .foregroundColor(.gray)
-                            Image(systemName:"greaterthan")
-                                .foregroundColor(.gray)
+                        ZStack{
+                            HStack{
+                                Image(systemName: "wifi")
+                                    .foregroundColor(.white)
+                                    .frame(width: 30, height: 30)
+                                    .background(Color.blue)
+                                    .cornerRadius(10)
+                                    .padding(1)
+                                Spacer()
+                                NavigationLink("Wi-Fi"){
+                                    OtherView()
+                                        .navigationBarBackButtonHidden()
+                                }
+                            }
+                            HStack{
+                                Spacer()
+                                Text("us_gbsw_hs_P")
+                                    .padding(.trailing, 25.0)
+                                    .foregroundColor(Color.gray)
+                            }
                         }
-                        HStack{
-                            Image("BlueTooth")
-                                .frame(width: 30, height: 30)
-                                .background(Color.blue)
-                                .cornerRadius(10)
-                                .padding(1)
-                            Text("Bluetooth")
-                            Spacer()
-                            Text("켬")
-                                .foregroundColor(.gray)
-                            Image(systemName:"greaterthan")
-                                .foregroundColor(.gray)
+                        ZStack{
+                            HStack{
+                                Image("BlueTooth")
+                                    .foregroundColor(.white)
+                                    .frame(width: 30, height: 30)
+                                    .background(Color.blue)
+                                    .cornerRadius(10)
+                                    .padding(1)
+                                Spacer()
+                                NavigationLink("Bluetooth"){
+                                    OtherView()
+                                        .navigationBarBackButtonHidden()
+                                }
+                            }
+                            HStack{
+                                Spacer()
+                                Text("켬")
+                                    .padding(.trailing, 25.0)
+                                    .foregroundColor(Color.gray)
+                            }
                         }
                         HStack{
                             Image(systemName:"antenna.radiowaves.left.and.right")
